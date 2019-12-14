@@ -1,2 +1,0 @@
-# MergedArray
-Created with CodeSandbox
