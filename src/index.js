@@ -1,25 +1,29 @@
-const array1 = [0, 3, 4, 31];
-const array2 = [4, 6, 30];
-function mergedArray(arr1, arr2) {
-  const superArr = arr1.concat(arr2).sort((a, b) => a - b);
+const string = "hello WORLD";
 
-  console.log(superArr);
-}
+const reverseVowels = string => {
+  console.log(string);
+  const vowels = [];
+  const indeces = [];
 
-mergedArray(array1, array2);
+  // const vowelArray = ;
+  const wordArray = string.split("");
 
-const mergedArray2 = (arr1, arr2) => {
-  let superArr = arr1 > arr2 ? [arr1, arr2] : [arr2, arr1];
-  let superior = superArr[1];
-  let inferior = superArr[0];
-
-  for (let i = 0; i < inferior.length; i++) {
-    superior.push(inferior[i]);
+  for (let i = 0; i < wordArray.length; i++) {
+    if (
+      ["a", "A", "e", "E", "o", "O", "u", "U", "i", "I"].indexOf(
+        wordArray[i]
+      ) !== -1
+    ) {
+      vowels.unshift(wordArray[i]);
+      indeces.push(i);
+    }
   }
 
-  let answer = superior.sort((a, b) => a - b);
+  for (let j = 0; j < indeces.length; j++) {
+    wordArray.splice(indeces[j], 1, vowels[j]);
+  }
 
-  console.log(answer);
+  console.log(wordArray.join(""));
 };
 
-mergedArray2(array1, array2);
+reverseVowels(string);
